@@ -1,11 +1,12 @@
-
+import About from "./components/About/About"
+import Hero from "./components/Hero/Hero"
 
 function App() {
 
   return (
     <>
-      
-      <h1 className="text-4xl">Vite + React</h1>
+      <Hero/>
+      <About/>
     </>
   )
 }
