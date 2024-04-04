@@ -1,66 +1,24 @@
-import { NavLink } from "react-router-dom";
+
 
 const Navbar = () => {
     const navItems = <>
-        <li><NavLink to="/"
-            style={({ isActive }) => {
-                return {
-                    color: isActive ? '#F4AF00' : '',
-                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
-                    fontWeight: isActive ? "bold" : "",
-                    background: isActive ? "none" : '',
-                };
-            }}>Home</NavLink>
+        <li><a href="/"
+            >Home</a>
         </li>
-        <li><NavLink to='#about'
-            style={({ isActive }) => {
-                return {
-                    color: isActive ? '#F4AF00' : '',
-                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
-                    fontWeight: isActive ? "bold" : "",
-                    background: isActive ? "none" : '',
-                };
-            }}>About</NavLink>
+        <li><a href='#about'
+           >About</a>
         </li>
-        <li><NavLink to="#services"
-            style={({ isActive }) => {
-                return {
-                    color: isActive ? '#F4AF00' : '',
-                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
-                    fontWeight: isActive ? "bold" : "",
-                    background: isActive ? "none" : '',
-                };
-            }}>Services</NavLink>
+        <li><a href="#services"
+           >Services</a>
         </li>
-        <li><NavLink to="#skills"
-            style={({ isActive }) => {
-                return {
-                    color: isActive ? '#F4AF00' : '',
-                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
-                    fontWeight: isActive ? "bold" : "",
-                    background: isActive ? "none" : '',
-                };
-            }}>Skills</NavLink>
+        <li><a href="#skills"
+            >Skills</a>
         </li>
-        <li><NavLink to="#projects"
-            style={({ isActive }) => {
-                return {
-                    color: isActive ? '#F4AF00' : '',
-                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
-                    fontWeight: isActive ? "bold" : "",
-                    background: isActive ? "none" : '',
-                };
-            }}>Projects</NavLink>
+        <li><a href="#projects"
+           >Projects</a>
         </li>
-        <li><NavLink to="#testimonials"
-            style={({ isActive }) => {
-                return {
-                    color: isActive ? '#F4AF00' : '',
-                    borderBottom: isActive ? "2px solid #F4AF00" : "black",
-                    fontWeight: isActive ? "bold" : "",
-                    background: isActive ? "none" : '',
-                };
-            }}>Testimonials</NavLink>
+        <li><a href="#testimonials"
+           >Testimonials</a>
         </li>
     </>
 

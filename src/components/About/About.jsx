@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
+import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const About = () => {
     const { data } = useFetch()
-    console.log(data?.user?.about)
     return (
-        <div id="about"
-            className="flex relative bg-[#121212] py-20">
+        <div id="about" 
+            className="flex relative bg-[#121212] py-20 max-w-screen-2xl mx-auto">
             <div className="w-1/2 hidden sm:block">
                 <img src={data?.user?.about?.alternateAvatars[0].url} alt='aboutImage' width='100%' height={'100%'} />
             </div>
@@ -34,7 +34,9 @@ const About = () => {
                         </div>
                         <div>
                             <h4 className="text-gray-500 font-medium">Social Network</h4>
-                            <Link className="text-sm md:text-lg md:font-bold" href='tel: +8801882261750' >+880 1882-261750</Link>
+                            <div className="flex gap-3 text-sm md:text-lg md:font-bold">
+                                <FaInstagram /> <FaLinkedin /> <FaTwitter /> <FaFacebook />
+                            </div>
                         </div>
                     </div>
                 </div>
