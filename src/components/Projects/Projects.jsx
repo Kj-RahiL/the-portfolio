@@ -43,8 +43,9 @@ const Projects = () => {
                                 <h1 className="mb-2 text-xl font-semibold">{item?.title}</h1>
                                 <p className="px-1 mb-3 text-sm opacity-80">{item?.description}</p>
                                <div className="flex justify-around">
-                               <Link to={item?.githuburl} className="me-2 rounded-sm bg-green-700 px-6 py-1 text-white">Github Url</Link>
-                               <Link to={item?.liveurl} className="me-2 rounded-sm bg-green-700 px-6 py-1 text-white">Live Url</Link>
+                               <Link onClick={() => setOpenModal(false)} to={`/${item?.githuburl}`}  className="me-2 rounded-sm bg-green-700 px-6 py-1 text-white">Github Url</Link>
+                               <Link onClick={() => setOpenModal(false)} to={`/${item?.liveurl}`} className="me-2 rounded-sm bg-green-700 px-6 py-1 text-white">Live Url</Link>
+            
                                </div>
                             </div>
                         </div>
