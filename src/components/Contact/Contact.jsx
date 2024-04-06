@@ -18,21 +18,21 @@ const Contact = () => {
                         <div className='flex gap-5 items-center mt-10'>
                             <FaPhoneAlt className="text-2xl lg:text-4xl text-white" />
                             <div>
-                                <h2 className="text-white text-3xl font-semibold">Phone Number</h2>
+                                <h2 className="text-white text-2xl font-semibold">Phone Number</h2>
                                 <p className='text-gray-400'>+91-9212321321</p>
                             </div>
                         </div>
                         <div className='flex gap-5 items-center'>
                             <MdEmail className="text-2xl lg:text-4xl text-white" />
                             <div>
-                                <h2 className="text-white text-3xl font-semibold">Email</h2>
+                                <h2 className="text-white text-2xl font-semibold">Email</h2>
                                 <p className='text-gray-400'>portfolio3@gmail.com</p>
                             </div>
                         </div>
                         <div className='flex gap-5 items-center'>
                             <GiHouse className="text-2xl lg:text-4xl text-white" />
                             <div>
-                                <h2 className="text-white text-3xl font-semibold">Address</h2>
+                                <h2 className="text-white text-2xl font-semibold">Address</h2>
                                 <p className='text-gray-400'>Los Angeles , America</p>
                             </div>
                         </div>
@@ -89,7 +89,7 @@ const Contact = () => {
                         </div>
                         <button
                             type="submit"
-                            className="bg-lime-600 hover:bg-lime-700 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+                            className="bg-green-700 hover:bg-green-900 text-white font-medium py-2.5 px-5 rounded-lg w-full"
                         >
                             Send Message
                         </button>

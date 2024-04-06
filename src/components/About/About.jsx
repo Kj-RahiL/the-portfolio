@@ -7,9 +7,9 @@ const About = () => {
     return (
         <div id="about"
             className=" bg-[#121212]">
-            <div  className="flex relative bg-[#121212] py-20 max-w-screen-2xl mx-auto">
-                <div className="w-1/2 hidden sm:block">
-                    <img src={data?.user?.about?.alternateAvatars[0].url} alt='aboutImage' width='100%' height={'100%'} />
+            <div  className="flex relative max-w-screen-2xl mx-auto mt-0 md:py-10">
+                <div className="hidden sm:block w-1/2 h-3/5 ">
+                    <img src={data?.user?.about?.alternateAvatars[0].url} alt='aboutImage' className="h-full w-full" />
                 </div>
                 <div className="space-y-8 text-gray-400 p-2 md:p-5 md:w-2/3">
                     <h2 className="text-xl">About Me</h2>

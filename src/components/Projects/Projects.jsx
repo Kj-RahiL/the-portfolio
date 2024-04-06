@@ -9,15 +9,15 @@ const Projects = () => {
     const [openModal, setOpenModal] = useState(false);
     return (
         <div id="projects" className="py-10 max-w-screen-2xl mx-auto">
-            <h2>Projects</h2>
-            <div className="grid grid-cols-3 gap-5 ">
+            <h2 className="text-2xl md:text-3xl text-center lg:text-5xl font-bold py-10">My Recent Work Projects</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-5 md:px-0">
                 {
                     data?.user?.projects.map((item) => (
                         <div
                             key={item._id}
-                            className=" bg-slate-100/70 rounded-xl space-y-5 shadow-md cursor-pointer"
+                            className=" bg-slate-100/70 rounded-lg space-y-5 cursor-pointer shadow-md shadow-green-700"
                             onClick={() => setOpenModal(true)}>
-                            <img className=" w-full bg-gray-400 rounded-xl hover:scale-105" src={item?.image?.url} alt="service card" />
+                            <img className=" w-full bg-gray-400 rounded-xl hover:scale-x-95 hover:scale-y-105 " src={item?.image?.url} alt="service card" />
                             <div className="space-y-2 px-5 pb-5">
                                 <p>
                                     {item.techStack.map((tech, i) => <span key={i} className=" text-xs md:text-sm text-gray-700 mr-2">{tech},</span>)}
