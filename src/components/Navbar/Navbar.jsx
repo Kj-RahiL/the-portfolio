@@ -1,63 +1,105 @@
 import { useState } from "react";
+import { Link } from "react-scroll";
 
 
 const Navbar = () => {
-    const [open, setOpen] = useState(false)
-
-    const navItems = <>
-        <li><a href="#"
-        >Home</a>
-        </li>
-        <li><a href='#about'
-        >About</a>
-        </li>
-        <li><a href="#services"
-        >Services</a>
-        </li>
-        <li><a href="#skills"
-        >Skills</a>
-        </li>
-        <li><a href="#projects"
-        >Projects</a>
-        </li>
-        <li><a href="#testimonials"
-        >Testimonials</a>
-        </li>
-    </>
-
-
+    const [open, setOpen] = useState(false);
 
     return (
-
         <nav className="fixed z-10 w-full flex items-center justify-between bg-[#393E46] px-4 py-2 text-white">
             <div className="scale-100 rounded-2xl px-3 py-2 text-xl font-semibold text-white transition-all duration-200 hover:scale-110">
                 <h2>John.</h2>
             </div>
-            <ul className="hidden md:flex items-center justify-between gap-6 text-slate-900">
-                <li className="cursor-pointer text-lg rounded-full px-6 py-2 text-white flex gap-5">{navItems}</li>
-            </ul>
-            <div className="hidden md:block">
-                <li className="cursor-pointer flex gap-2 list-none rounded-full px-6 py-2 text-white ">
-                    <svg className='w-4' viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff"><g strokeWidth={0} /><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" /><g id="SVGRepo_iconCarrier"> <title>call [#ffffff]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" strokeWidth={1} fill="none" fillRule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-103.000000, -7321.000000)" fill="#ffffff"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M61.7302966,7173.99596 C61.2672966,7175.40296 59.4532966,7176.10496 58.1572966,7175.98796 C56.3872966,7175.82796 54.4612966,7174.88896 52.9992966,7173.85496 C50.8502966,7172.33496 48.8372966,7169.98396 47.6642966,7167.48896 C46.8352966,7165.72596 46.6492966,7163.55796 47.8822966,7161.95096 C48.3382966,7161.35696 48.8312966,7161.03996 49.5722966,7161.00296 C50.6002966,7160.95296 50.7442966,7161.54096 51.0972966,7162.45696 C51.3602966,7163.14196 51.7112966,7163.84096 51.9072966,7164.55096 C52.2742966,7165.87596 50.9912966,7165.93096 50.8292966,7167.01396 C50.7282966,7167.69696 51.5562966,7168.61296 51.9302966,7169.09996 C52.6632966,7170.05396 53.5442966,7170.87696 54.5382966,7171.50296 C55.1072966,7171.86196 56.0262966,7172.50896 56.6782966,7172.15196 C57.6822966,7171.60196 57.5872966,7169.90896 58.9912966,7170.48196 C59.7182966,7170.77796 60.4222966,7171.20496 61.1162966,7171.57896 C62.1892966,7172.15596 62.1392966,7172.75396 61.7302966,7173.99596 C61.4242966,7174.92396 62.0362966,7173.06796 61.7302966,7173.99596" id="call-[#ffffff]"> </path> </g> </g> </g> </g></svg>
-                    <a href="#contact">Contact</a>
+
+            <ul className="navbar-menu hidden md:flex items-center justify-between gap-6 text-xl text-white cursor-pointer">
+                <li>
+                    <Link to="home" smooth={true} duration={500}>
+                        Home
+                    </Link>
                 </li>
+                <li>
+                    <Link to="about" smooth={true} duration={500}>
+                        About
+                    </Link>
+                </li>
+                <li>
+                    <Link to="services" smooth={true} duration={500}>
+                        Services
+                    </Link>
+                </li>
+                <li>
+                    <Link to="skills" smooth={true} duration={500}>
+                        Skills
+                    </Link>
+                </li>
+                <li>
+                    <Link to="projects" smooth={true} duration={500}>
+                        Projects
+                    </Link>
+                </li>
+                <li>
+                    <Link to="testimonials" smooth={true} duration={500}>
+                        Testimonials
+                    </Link>
+                </li>
+            </ul>
+
+
+            <div className="hidden md:block">
+                <ul className=" cursor-pointer flex gap-2  rounded-full px-6 py-2 text-white text-xl">
+                    <Link to="contact" smooth={true} duration={500}>
+                        <svg className="w-4" viewBox="0 0 15 15" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" stroke="#ffffff">
+                        </svg>
+                        Contact
+                    </Link>
+                </ul>
             </div>
 
             <div onClick={() => setOpen((pv) => !pv)} className="relative flex transition-transform md:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="cursor-pointer" > <line x1="4" x2="20" y1="12" y2="12" /> <line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /> </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="cursor-pointer" > <line x1="4" x2="20" y1="12" y2="12" /> <line x1="4" x2="20" y1="6" y2="6" /><line x1="4" x2="20" y1="18" y2="18" /> </svg>
                 {open && (
-                    <ul className=" z-10  gap-2  bg-[#393E46]  absolute right-0 top-11 flex w-[200px] flex-col  rounded-lg   text-base ">
-                        <li className="cursor-pointer  px-4 pt-2 text-white flex flex-col gap-5">
-                            {navItems}
+                    <ul className="navbar-menu z-10 gap-2 bg-[#393E46] absolute right-0 top-11 flex w-[200px] flex-col rounded-lg  ">
+
+                        <li className="text-xl px-6 py-2 cursor-pointer hover:bg-green-700">
+                            <Link to="home" smooth={true} duration={500}>
+                                Home
+                            </Link>
                         </li>
-                        <li className="cursor-pointer  px-4 pb-2 text-white">
-                            Contact
+
+                        <li className="text-xl px-6 py-2 cursor-pointer hover:bg-green-700">
+                            <Link to="about" smooth={true} duration={500}>
+                                About
+                            </Link>
+                        </li>
+                        <li className="text-xl px-6 py-2 cursor-pointer hover:bg-green-700">
+                            <Link to="services" smooth={true} duration={500}>
+                                Services
+                            </Link>
+                        </li>
+                        <li className="text-xl px-6 py-2 cursor-pointer hover:bg-green-700">
+                            <Link to="skills" smooth={true} duration={500}>
+                                Skills
+                            </Link>
+                        </li>
+                        <li className="text-xl px-6 py-2 cursor-pointer hover:bg-green-700">
+                            <Link to="projects" smooth={true} duration={500}>
+                                Projects
+                            </Link>
+                        </li>
+                        <li className="text-xl px-6 py-2 cursor-pointer hover:bg-green-700">
+                            <Link to="testimonials" smooth={true} duration={500}>
+                                Testimonials
+                            </Link>
+                        </li>
+                        <li className="text-xl px-6 py-2 cursor-pointer hover:bg-green-700">
+                            <Link to="contact">
+                                Contact
+                            </Link>
                         </li>
                     </ul>
                 )}
             </div>
         </nav>
-
     );
 };
 

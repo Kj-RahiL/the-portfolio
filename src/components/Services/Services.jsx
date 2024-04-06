@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { motion } from "framer-motion"
 
 const Services = () => {
     const { data } = useFetch()
@@ -22,7 +23,12 @@ const Services = () => {
     };
 
     return (
-        <div id="services" className="max-w-screen-2xl mx-auto my-20">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            id="services" 
+            className="max-w-screen-2xl mx-auto my-20">
             <div>
                 <h2 className='text-center text-5xl font-bold pb-8'>Services</h2>
                 <Swiper
@@ -57,7 +63,7 @@ const Services = () => {
                 </Swiper>
             </div>
 
-        </div>
+        </motion.div>
 
     );
 };

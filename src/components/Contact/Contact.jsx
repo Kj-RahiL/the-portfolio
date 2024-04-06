@@ -1,11 +1,19 @@
 import { FaPhoneAlt } from "react-icons/fa"
 import { GiHouse } from "react-icons/gi";
 import { MdEmail } from "react-icons/md";
-
+import { motion } from "framer-motion"
 
 const Contact = () => {
     return (
-        <div id="contact"
+        <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 3,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+            id="contact"
             className="   bg-[#121212]"
         >
             <div className="max-w-screen-2xl mx-auto grid md:grid-cols-2 py-24 gap-4 relative">
@@ -96,7 +104,7 @@ const Contact = () => {
                     </form>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

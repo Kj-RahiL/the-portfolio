@@ -5,6 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import useFetch from '../../hooks/useFetch';
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa";
+import { motion } from "framer-motion"
 
 
 
@@ -15,25 +16,33 @@ const Testimonials = () => {
     const breakpoints = {
         // small device
         640: {
-          slidesPerView: 1,
+            slidesPerView: 1,
         },
         // large device
         768: {
-          slidesPerView: 2,
+            slidesPerView: 2,
         },
-      };
+    };
 
     return (
-        <div id='testimonials'
-        className='max-w-screen-2xl mx-auto mb-20'>
+        <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.8,
+                delay: 3,
+                ease: [0, 0.71, 0.2, 1.01]
+            }}
+            id='testimonials'
+            className='max-w-screen-2xl mx-auto mb-20'>
             <div className='text-center my-5 mt-10 space-y-2'>
                 <h3 className='text-4xl uppercase font-bold '>testimonials</h3>
-                <p className='text-2xl font-bold'>What Client s Say</p>
+                <p className='text-2xl font-bold text-green-800'>What Client s Say</p>
             </div>
 
             <div>
                 <Swiper
-                    breakpoints={breakpoints }
+                    breakpoints={breakpoints}
                     spaceBetween={40}
                     centeredSlides={true}
                     autoplay={{
@@ -53,7 +62,7 @@ const Testimonials = () => {
                             >
                                 <div className="rounded-sm shadow-sm bg-green-50/50 p-5 shadow-green-500">
                                     <p className="py-5  text-xl ">
-                                        <FaQuoteLeft style={{ float: 'left' }}/>
+                                        <FaQuoteLeft style={{ float: 'left' }} />
                                         <span className='text-justify text-sm md:text-base'>  {item?.review}</span>
                                         <FaQuoteRight style={{ float: 'right' }} /></p>
                                     <div className='flex gap-5 items-center mb-10'>
@@ -70,7 +79,7 @@ const Testimonials = () => {
 
                 </Swiper>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

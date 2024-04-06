@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
 import useFetch from "../../hooks/useFetch";
-import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { motion } from "framer-motion"
 
 const About = () => {
     const { data } = useFetch()
     return (
-        <div id="about"
+        <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.5,
+          ease: [0, 0.71, 0.2, 1.01]
+        }}
+            id="about"
             className=" bg-[#121212]">
-            <div  className="flex relative max-w-screen-2xl mx-auto mt-0 md:py-10">
+            <div className="flex relative max-w-screen-2xl mx-auto mt-0 md:py-10">
                 <div className="hidden sm:block w-1/2 h-3/5 ">
                     <img src={data?.user?.about?.alternateAvatars[0].url} alt='aboutImage' className="h-full w-full" />
                 </div>
@@ -36,7 +44,10 @@ const About = () => {
                             <div>
                                 <h4 className="text-gray-500 font-medium">Social Network</h4>
                                 <div className="flex gap-3 text-sm md:text-lg md:font-bold">
-                                    <FaInstagram /> <FaLinkedin /> <FaTwitter /> <FaFacebook />
+                                    {data?.user?.social_handles.map((item, i)=><Link key={i} to={item.url}>
+                                        <img className="w-8 pt-2" src={item.image.url} alt="" />
+                                        </Link>
+                                        )}
                                 </div>
                             </div>
                         </div>
@@ -45,7 +56,7 @@ const About = () => {
                 </div>
             </div>
 
-        </div>
+        </motion.div>
     );
 };
 
